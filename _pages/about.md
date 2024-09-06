@@ -38,7 +38,7 @@ My research interest lies in **Robot manipulation, Legged robots, Reinforcement 
 
 Junfeng Long\*, **Wenye Yu\***, Quanyi Li\*, Zirui Wang, Dahua Lin, Jiangmiao Pang
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=en&user=pN95HCsAAAAJ&citation_for_view=pN95HCsAAAAJ:u-x6o8ySG0sC) <strong><span class='show_paper_citations' data='pN95HCsAAAAJ:u-x6o8ySG0sC'></span></strong>
+[**Project website**](https://junfeng-long.github.io/HINF/) <strong><span class='show_paper_citations' data='pN95HCsAAAAJ:u-x6o8ySG0sC'></span></strong>
 
 </div>
 </div>
@@ -53,6 +53,8 @@ Junfeng Long\*, **Wenye Yu\***, Quanyi Li\*, Zirui Wang, Dahua Lin, Jiangmiao Pa
 # 📖 Educations
 - *2021.09 - now*, Shanghai Jiao Tong University
 - *2018.09 - 2021.06*, Shanghai High School 
+- TOEFL score: 110 [Listening: 28, Reading: 30, Speaking: 25, Writing: 27] (first time)
+- CET6 score: 677 (first time)
 
 <!-- # 💬 Invited Talks
 - *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
