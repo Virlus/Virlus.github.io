@@ -36,9 +36,31 @@ My research interest lies in **Robot manipulation, Legged robots, Reinforcement 
 
 [Learning H-Infinity Locomotion Control](https://arxiv.org/pdf/2404.14405)
 
-Junfeng Long\*, **Wenye Yu\***, Quanyi Li\*, Zirui Wang, Dahua Lin, Jiangmiao Pang
+Junfeng Long\*, **Wenye Yu\***, Quanyi Li\*, Zirui Wang, Dahua Lin, Jiangmiao Pang†
 
-[**Project website**](https://junfeng-long.github.io/HINF/) <strong><span class='show_paper_citations' data='pN95HCsAAAAJ:u-x6o8ySG0sC'></span></strong>
+[**[Project website]**](https://junfeng-long.github.io/HINF/) 
+[**[Paper]**](https://arxiv.org/abs/2404.14405)
+<strong><span class='show_paper_citations' data='pN95HCsAAAAJ:u-x6o8ySG0sC'></span></strong>
+
+We propose H-Infinity Locomotion Control, an adversarial framework for quadrupedal robots which enhances their robustness against external forces with a performance guarantee. 
+
+</div>
+</div>
+
+# 📝 Preprints
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/grutopia.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[GRUtopia: Dream General Robots in a City at Scale](https://www.arxiv.org/abs/2407.10943)
+
+Hanqing Wang\*, Jiahe Chen\*, Wensi Huang\*, Qingwei Ben\*, Tai Wang\*, Boyu Mi\*, Tao Huang, Siheng Zhao, Yilun Chen, Sizhe Yang, Peizhou Cao, **Wenye Yu**, Zichao Ye, Jialun Li, Junfeng Long, Zirui Wang, Huiling Wang, Ying Zhao, Zhongying Tu, Yu Qiao, Dahua Lin, Jiangmiao Pang†
+
+[**[Project website]**](https://github.com/OpenRobotLab/GRUtopia) 
+[**[Paper]**](https://www.arxiv.org/abs/2407.10943)
+<strong><span class='show_paper_citations' data='pN95HCsAAAAJ:d1gkVwhDpl0C'></span></strong>
+
+We proposed GRUtopia, the first simulated interactive 3D society designed for various robots. It features (a)GRScenes, a dataset with 100k interactive and finely annotated scenes. (b) GRResidents, a LLM driven NPC system. (c) GRBench, a benchmark posing moderately challenging tasks.
 
 </div>
 </div>
