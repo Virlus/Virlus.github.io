@@ -34,7 +34,7 @@ My research interest lies in **Robot manipulation, Legged robots, Reinforcement 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CoRL 2024</div><img src='images/hinf.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Learning H-Infinity Locomotion Control](https://arxiv.org/pdf/2404.14405) 🎉 **Best Poster Award at CoRL 2024 LocoLearn Workshop**
+[Learning H-Infinity Locomotion Control](https://arxiv.org/pdf/2404.14405) 🎉 <font color="lightcoral">**Best Poster Award at CoRL 2024 LocoLearn Workshop**</font>
 
 Junfeng Long\*, **Wenye Yu\***, Quanyi Li\*, Zirui Wang, Dahua Lin, Jiangmiao Pang†
 
