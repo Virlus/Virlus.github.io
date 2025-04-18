@@ -26,11 +26,27 @@ My research interest lies in **Robot manipulation and Embodied AI**. During off 
 
 
 # 🔥 News
+- *2025.04*: &nbsp;🎉🎉 One paper (Novel Demonstration Generation with Gaussian Splatting Enables Robust One-Shot Manipulation) is accepted by RSS 2025!
 - *2024.09*: &nbsp;🎉🎉 One paper (Learning H-Infinity Locomotion Control) is accepted by CoRL 2024! 
 - *2023.08*: &nbsp; Joined [OpenRobotLab](https://github.com/OpenRobotLab).
 - *2023.02*: &nbsp; Joined [Machine Vision and Intelligence Group](https://www.mvig.org/).
 
 # 📝 Publications 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">RSS 2025</div><img src='images/robosplat.pdf' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Novel Demonstration Generation with Gaussian Splatting Enables Robust One-Shot Manipulation](https://arxiv.org/pdf/2504.13175)
+
+Sizhe Yang\*, **Wenye Yu\***, Jia Zeng, Jun Lv, Kerui Ren, Cewu Lu, Dahua Lin, Jiangmiao Pang†
+
+[**[Project website]**](https://yangsizhe.github.io/robosplat/) 
+[**[Paper]**](https://arxiv.org/pdf/2504.13175)
+
+RoboSplat is framework that leverages 3D Gaussian Splatting (3DGS) to generate novel demonstrations for RGB-based policy learning in a one-shot manner, enabling robust performance across six types of visual generalization in the real world.
+
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">CoRL 2024</div><img src='images/hinf.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -41,7 +57,6 @@ Junfeng Long\*, **Wenye Yu\***, Quanyi Li\*, Zirui Wang, Dahua Lin, Jiangmiao Pa
 
 [**[Project website]**](https://junfeng-long.github.io/HINF/) 
 [**[Paper]**](https://arxiv.org/abs/2404.14405)
-<strong><span class='show_paper_citations' data='pN95HCsAAAAJ:u-x6o8ySG0sC'></span></strong>
 
 We propose H-Infinity Locomotion Control, an adversarial framework for quadrupedal robots which enhances their robustness against external forces with a performance guarantee. 
 
