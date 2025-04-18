@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Wenye Yu"
   avatar           : "images/my_profile.png"
-  bio              : "Robotics reseacher focused on low-level control"
+  bio              : "Embodied AI Researcher focused on robot manipulation"
   location         : "Shanghai, China"
   employer         :
   pubmed           : 

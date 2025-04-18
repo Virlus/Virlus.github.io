@@ -74,7 +74,6 @@ Hanqing Wang\*, Jiahe Chen\*, Wensi Huang\*, Qingwei Ben\*, Tai Wang\*, Boyu Mi\
 
 [**[Project website]**](https://github.com/OpenRobotLab/GRUtopia) 
 [**[Paper]**](https://www.arxiv.org/abs/2407.10943)
-<strong><span class='show_paper_citations' data='pN95HCsAAAAJ:d1gkVwhDpl0C'></span></strong>
 
 We proposed GRUtopia, the first simulated interactive 3D society designed for various robots. It features (a)GRScenes, a dataset with 100k interactive and finely annotated scenes. (b) GRResidents, a LLM driven NPC system. (c) GRBench, a benchmark posing moderately challenging tasks.
 
