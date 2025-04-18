@@ -33,7 +33,7 @@ My research interest lies in **Robot manipulation and Embodied AI**. During off 
 
 # 📝 Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">RSS 2025</div><img src='images/robosplat.pdf' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">RSS 2025</div><img src='images/robosplat.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Novel Demonstration Generation with Gaussian Splatting Enables Robust One-Shot Manipulation](https://arxiv.org/pdf/2504.13175)
