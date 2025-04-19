@@ -42,6 +42,7 @@ Sizhe Yang\*, **Wenye Yu\***, Jia Zeng, Jun Lv, Kerui Ren, Cewu Lu, Dahua Lin, J
 
 [**[Project website]**](https://yangsizhe.github.io/robosplat/) 
 [**[Paper]**](https://arxiv.org/pdf/2504.13175)
+[**[Code]**](https://github.com/OpenRobotLab/RoboSplat/)
 
 RoboSplat is framework that leverages 3D Gaussian Splatting (3DGS) to generate novel demonstrations for RGB-based policy learning in a one-shot manner, enabling robust performance across six types of visual generalization in the real world.
 
