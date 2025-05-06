@@ -66,7 +66,7 @@ We propose H-Infinity Locomotion Control, an adversarial framework for quadruped
 
 # 📝 Preprints
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/SIME.pdf' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/sime.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [SIME: Enhancing Policy Self-Improvement with Modal-level Exploration](https://arxiv.org/abs/2505.01396)
