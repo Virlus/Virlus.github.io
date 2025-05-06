@@ -66,6 +66,24 @@ We propose H-Infinity Locomotion Control, an adversarial framework for quadruped
 
 # 📝 Preprints
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/SIME.pdf' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[SIME: Enhancing Policy Self-Improvement with Modal-level Exploration](https://arxiv.org/abs/2505.01396)
+
+Yang Jin\*, Jun Lv\*, **Wenye Yu**, Hongjie Fang, Yong-Lu Li, Cewu Lu†
+
+[**[Project website]**](https://ericjin2002.github.io/SIME/) 
+[**[Paper]**](https://arxiv.org/pdf/2505.01396)
+[**[Code]**](https://github.com/EricJin2002/SIME)
+
+With modal-level exploration, the robot can generate more diverse and multi-modal interaction data.
+By learning from the most valuable trials and high-quality segments from these interactions,
+the robot can effectively refine its capabilities through self-improvement.
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/grutopia.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
