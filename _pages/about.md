@@ -31,7 +31,7 @@ My research interest lies in **Robot manipulation and Embodied AI**. During off 
 - *2023.08*: &nbsp; Joined [OpenRobotLab](https://github.com/OpenRobotLab).
 - *2023.02*: &nbsp; Joined [Machine Vision and Intelligence Group](https://www.mvig.org/).
 
-# 📝 Publications 
+# 📝 Selected Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">RSS 2025</div><img src='images/robosplat.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -64,7 +64,7 @@ We propose H-Infinity Locomotion Control, an adversarial framework for quadruped
 </div>
 </div>
 
-# 📝 Preprints
+# 📝 Other Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/sime.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
