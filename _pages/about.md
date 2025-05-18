@@ -64,7 +64,7 @@ We propose H-Infinity Locomotion Control, an adversarial framework for quadruped
 </div>
 </div>
 
-# 📝 Other Publications
+<!-- # 📝 Other Publications
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/sime.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
@@ -98,7 +98,7 @@ Hanqing Wang\*, Jiahe Chen\*, Wensi Huang\*, Qingwei Ben\*, Tai Wang\*, Boyu Mi\
 We proposed GRUtopia, the first simulated interactive 3D society designed for various robots. It features (a)GRScenes, a dataset with 100k interactive and finely annotated scenes. (b) GRResidents, a LLM driven NPC system. (c) GRBench, a benchmark posing moderately challenging tasks.
 
 </div>
-</div>
+</div> -->
 
 <!-- - [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020** -->
 
