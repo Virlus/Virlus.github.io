@@ -20,7 +20,7 @@ redirect_from:
 Hi there! I am a senior undergraduate from Shanghai Jiao Tong University.
 Currently, I am a robotics researcher at [Machine Vision and Intelligence Group](https://www.mvig.org/) (supervised by [Prof. Cewu Lu](https://www.mvig.org/)). 
 Besides, I'm a member of [Guozhi class](http://www.qingyuan.sjtu.edu.cn/c/Introductiongzb) (held by [Prof. Xiaoou Tang](https://www.ie.cuhk.edu.hk/faculty/tang-xiaoou-sean/)). 
-Previously, I worked as a research intern at [OpenRobotLab](https://github.com/OpenRobotLab) (supervised by [Dr. Jiangmiao Pang](https://oceanpang.github.io/)). 
+Previously, I worked as a research intern at [InternRobotics](https://github.com/InternRobotics) (supervised by [Dr. Jiangmiao Pang](https://oceanpang.github.io/)). 
 <!-- <a href='https://scholar.google.com/citations?user=pN95HCsAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a> -->
 
 My research interest lies in **Robot manipulation and Embodied AI**. During off time, I am a music enthusiast, fond of a wide range of genres including Hip-Hop, R&B, Rock, Pop, and Electronic. Sports take up much of my leisure as well, among which basketball is my favourite. I am also a fan of travelling and cinematography.
@@ -31,7 +31,7 @@ My research interest lies in **Robot manipulation and Embodied AI**. During off 
 # 🔥 News
 - *2025.04*: &nbsp;🎉🎉 One paper (Novel Demonstration Generation with Gaussian Splatting Enables Robust One-Shot Manipulation) is accepted by RSS 2025!
 - *2024.09*: &nbsp;🎉🎉 One paper (Learning H-Infinity Locomotion Control) is accepted by CoRL 2024! 
-- *2023.08*: &nbsp; Joined [OpenRobotLab](https://github.com/OpenRobotLab).
+- *2023.08*: &nbsp; Joined [InternRobotics](https://github.com/InternRobotics).
 - *2023.02*: &nbsp; Joined [Machine Vision and Intelligence Group](https://www.mvig.org/).
 
 # 📝 Selected Publications
@@ -122,4 +122,4 @@ We proposed GRUtopia, the first simulated interactive 3D society designed for va
 
 # 💻 Experiences
 - *2023.02 - now*, [Machine Vision and Intelligence Group](https://www.mvig.org/), Shanghai Jiao Tong University.
-- *2023.08 - 2025.04*, [OpenRobotLab](https://github.com/OpenRobotLab), Shanghai AI Laboratory.
+- *2023.08 - 2025.04*, [InternRobotics](https://github.com/InternRobotics), Shanghai AI Laboratory.
