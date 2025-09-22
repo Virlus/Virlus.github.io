@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="ARMADA">
+  <meta name="keywords" content="Human-in-the-loop, Robot learning, Manipulation, Failure detection, Multi-robot system">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARMADA</title>
+
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z0X7QT098P"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Z0X7QT098P');
+</script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.ico">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://virlus.github.io/">Wenye Yu</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://lyuj1998.github.io/">Jun Lv</a><sup>1,3</sup>,</span>
+            <span class="author-block">
+              <a href="https://github.com/KiriyamaGK">Zixi Ying</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/EricJin2002">Yang Jin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://alvinwen428.github.io/">Chuan Wen</a><sup>1,†</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.mvig.org/">Cewu Lu</a><sup>1,2,3,†</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Shanghai Jiao Tong University,</span>
+            <span class="author-block"><sup>2</sup>Shanghai Innovation Institute,</span>
+            <span class="author-block"><sup>3</sup>Noematrix Ltd.</span>
+            <span class="author-block"><sup>†</sup>Equal advising</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://virlus.github.io/armada"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://virlus.github.io/armada"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://virlus.github.io/armada"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser.mp4"
+                type="video/mp4">
+      </video> -->
+      <video id="full_demo" controls playsinline height="100%">
+        <source src="./static/videos/ARMADA_full_demo.mp4"
+                type="video/mp4">
+      </video>
+      <!-- <h2 class="subtitle has-text-centered">
+        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
+        free-viewpoint
+        portraits.
+      </h2> -->
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We devise <strong style="color: rgb(155, 114, 170); font-size: 1.5em;">ARMADA</strong>, 
+            a multi-robot deployment and adaptation system with human-in-the-loop shared control, 
+            featuring an autonomous online failure detection method named <strong style="color: rgb(155, 114, 170); font-size: 1.5em;">FLOAT</strong>.
+          </p>
+          <p>
+            Thanks to FLOAT, ARMADA enables <strong style="color: rgb(155, 114, 170); font-size: 1.05em;">paralleled policy rollout</strong> 
+            and requests human intervention only when necessary, significantly reducing reliance on human supervision.
+            Hence, ARMADA enables efficient acquisition of in-domain data, 
+            and leads to <strong style="color: rgb(155, 114, 170); font-size: 1.05em;">more scalable deployment and faster adaptation to new scenarios</strong>.
+          </p>
+          <p>
+            FLOAT achieves <strong style="color: rgb(155, 114, 170); font-size: 1.05em;">remarkable progress in detection accuracy</strong> 
+            across multiple real-world tasks, compared to previous failure detection approaches.
+            Besides, ARMADA manifests <strong style="color: rgb(155, 114, 170); font-size: 1.05em;">saliently larger increase in success rate and 
+            reduction in reliance on human intervention</strong> over multiple rounds of policy rollout and post-training, 
+            compared to previous human-in-the-loop learning methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Method overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="publication-image">
+          <img src="./static/images/method.pdf" alt="ARMADA method overview" style="width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          <p>
+            FLOAT failure detector conducts real-time OT matching between the policy embeddings of the current rollout and all expert demonstrations, 
+            and defines the minimum OT cost as FLOAT index. We thereby calibrate the FLOAT threshold on all successful rollouts.
+          </p>
+          <p>
+            When the FLOAT index of a rollout trajectory exceeds the threshold, we consider it a failure and employ adaptive rewinding based on OT computation, 
+            which helps retrace a previous timestep before the scene was disturbed.
+          </p>
+          <p>
+            Our multi-robot system then allocates an idle human operator to the failed robot for intervention, forming an efficient deployment paradigm.
+            All the data collected are then utilized for post-training, facilitating scalable adaptation to deployment scenarios.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Method overview. -->
+
+    <!-- Adaptive rewinding illustration. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="columns">
+          <!-- Left column - Video -->
+          <div class="column is-half">
+            <h3 class="title is-4 has-text-centered">Illustration of adaptive rewinding</h3>
+            <video autoplay muted controls playsinline height="100%" style="width: 100%;">
+              <source src="./static/videos/adaptive_rewinding.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <!-- Right column - Captions -->
+          <div class="column is-half">
+            <div class="content has-text-justified" style="margin-top: 3rem;">
+              <p>
+                We design an adaptive rewinding mechanism that allows the robot to <strong>retrace a previous timestep</strong> 
+                while human operators can help <strong>reset the scene as it was</strong>,
+                 thus ensuring an intact and informative demonstration with human corrective behaviour.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Adaptive rewinding illustration. -->
+    
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Real-world task illustrations. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Real-world Task Illustrations</h2>
+        
+        <!-- Video Grid -->
+        <div class="columns is-multiline">
+          <!-- First row -->
+          <div class="column is-half">
+            <video autoplay muted loop playsinline height="100%" style="width: 100%;">
+              <source src="./static/videos/pour_marble.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle is-5" style="margin-top: 1rem;">Pour marbles into bowl</h3>
+          </div>
+          <div class="column is-half">
+            <video autoplay muted loop playsinline height="100%" style="width: 100%;">
+              <source src="./static/videos/hang_mug.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle is-5" style="margin-top: 1rem;">Hang mug on holder</h3>
+          </div>
+          
+          <!-- Second row -->
+          <div class="column is-half">
+            <video autoplay muted loop playsinline height="100%" style="width: 100%;">
+              <source src="./static/videos/mango_into_drawer.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle is-5" style="margin-top: 1rem;">Grasp mango and put it into drawer</h3>
+          </div>
+          <div class="column is-half">
+            <video autoplay muted loop playsinline height="100%" style="width: 100%;">
+              <source src="./static/videos/fold_towel.mp4" type="video/mp4">
+            </video>
+            <h3 class="subtitle is-5" style="margin-top: 1rem;">Fold towel</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Real-world task illustrations. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Failure detection experiments. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Failure Detection Experiments</h2>
+        
+        <!-- Experiment figure -->
+        <div class="publication-image" style="margin-top: 2rem;">
+          <img src="./static/images/failure_detection_exp.pdf" alt="Failure detection experiment results" style="width: 100%; height: auto;">
+        </div>
+        
+        <!-- Captions -->
+        <div class="content has-text-justified" style="margin-top: 2rem;">
+          FLOAT achieves <strong>nearly 95% accuracy</strong> across four tasks, 
+          which is an improvement of over 20% compared to state-of-the-art baseline methods. 
+          It manifests comparable performance to its variant which further integrates action inconsistency metric, 
+          showcasing the effectiveness of FLOAT in <strong>detecting various failures</strong>.
+        </div>
+        
+      </div>
+    </div>
+    <!--/ Failure detection experiments. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- FLOAT visualization. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">FLOAT Visualization</h2>
+        
+        <!-- Fold towel subsection -->
+        <h3 class="title is-4" style="margin-top: 2rem;">Fold towel</h3>
+        <div class="hero is-light is-small">
+          <div class="hero-body">
+            <div class="container">
+              <div id="fold-towel-carousel" class="carousel results-carousel">
+                <div class="item item-fold-towel-0">
+                  <video poster="" id="fold-towel-0" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_0.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-1">
+                  <video poster="" id="fold-towel-1" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_1.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-2">
+                  <video poster="" id="fold-towel-2" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_2.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-3">
+                  <video poster="" id="fold-towel-3" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_3.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-4">
+                  <video poster="" id="fold-towel-4" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_4.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-5">
+                  <video poster="" id="fold-towel-5" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_5.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-6">
+                  <video poster="" id="fold-towel-6" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_6.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-7">
+                  <video poster="" id="fold-towel-7" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_7.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-8">
+                  <video poster="" id="fold-towel-8" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_8.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-9">
+                  <video poster="" id="fold-towel-9" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_9.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+                <div class="item item-fold-towel-10">
+                  <video poster="" id="fold-towel-10" autoplay controls muted loop playsinline height="100%">
+                    <source src="./static/videos/ot_visual/fold_towel/ot_visualization_episode_10.mp4"
+                            type="video/mp4">
+                  </video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Grasp mango subsection -->
+        <h3 class="title is-4" style="margin-top: 2rem;">Grasp mango and put it into drawer</h3>
+        <div class="hero is-light is-small">
+          <div class="hero-body">
+            <div class="container">
+                             <div id="grasp-mango-carousel" class="carousel results-carousel">
+                 <div class="item item-grasp-mango-0">
+                   <video poster="" id="grasp-mango-0" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_0.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-grasp-mango-1">
+                   <video poster="" id="grasp-mango-1" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_1.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-grasp-mango-2">
+                   <video poster="" id="grasp-mango-2" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_2.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-grasp-mango-3">
+                   <video poster="" id="grasp-mango-3" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_3.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-grasp-mango-4">
+                   <video poster="" id="grasp-mango-4" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_4.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-grasp-mango-5">
+                   <video poster="" id="grasp-mango-5" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_5.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-grasp-mango-6">
+                   <video poster="" id="grasp-mango-6" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_6.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                                   <div class="item item-grasp-mango-7">
+                    <video poster="" id="grasp-mango-7" autoplay controls muted loop playsinline height="100%">
+                      <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_7.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-grasp-mango-8">
+                    <video poster="" id="grasp-mango-8" autoplay controls muted loop playsinline height="100%">
+                      <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_8.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-grasp-mango-9">
+                    <video poster="" id="grasp-mango-9" autoplay controls muted loop playsinline height="100%">
+                      <source src="./static/videos/ot_visual/grasp_mango/ot_visualization_episode_9.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Pour marbles subsection -->
+        <h3 class="title is-4" style="margin-top: 2rem;">Pour marbles into bowl</h3>
+        <div class="hero is-light is-small">
+          <div class="hero-body">
+            <div class="container">
+                             <div id="pour-marbles-carousel" class="carousel results-carousel">
+                 <div class="item item-pour-marbles-0">
+                   <video poster="" id="pour-marbles-0" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_0.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-pour-marbles-1">
+                   <video poster="" id="pour-marbles-1" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_1.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-pour-marbles-2">
+                   <video poster="" id="pour-marbles-2" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_2.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-pour-marbles-3">
+                   <video poster="" id="pour-marbles-3" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_3.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-pour-marbles-4">
+                   <video poster="" id="pour-marbles-4" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_4.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-pour-marbles-5">
+                   <video poster="" id="pour-marbles-5" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_5.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                 <div class="item item-pour-marbles-6">
+                   <video poster="" id="pour-marbles-6" autoplay controls muted loop playsinline height="100%">
+                     <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_6.mp4"
+                             type="video/mp4">
+                   </video>
+                 </div>
+                                   <div class="item item-pour-marbles-7">
+                    <video poster="" id="pour-marbles-7" autoplay controls muted loop playsinline height="100%">
+                      <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_7.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-pour-marbles-8">
+                    <video poster="" id="pour-marbles-8" autoplay controls muted loop playsinline height="100%">
+                      <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_8.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="item item-pour-marbles-9">
+                    <video poster="" id="pour-marbles-9" autoplay controls muted loop playsinline height="100%">
+                      <source src="./static/videos/ot_visual/pour_marbles/ot_visualization_episode_9.mp4"
+                              type="video/mp4">
+                    </video>
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!--/ FLOAT visualization. -->
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Faster adaptation to deployment scenarios. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Faster Adaptation to Deployment Scenarios</h2>
+        
+        <!-- First figure -->
+        <div class="publication-image" style="margin-top: 2rem;">
+          <img src="./static/images/finetune_exp_SR.pdf" alt="Task success rate over 3 post-training rounds" style="width: 100%; height: auto;">
+        </div>
+        
+        <!-- First figure caption -->
+        <div class="content has-text-justified" style="margin-top: 1.5rem; margin-bottom: 3rem;">
+          <p>
+            ARMADA exhibits stable progress in success rate, 
+            with a <strong>more than four-fold increase</strong> compared to previous human-in-the-loop learning approach, 
+            thanks to our adaptive rewinding mechanism.
+          </p>
+        </div>
+        
+        <!-- Second figure -->
+        <div class="publication-image" style="margin-top: 2rem;">
+          <img src="./static/images/finetune_exp_HR.pdf" alt="Human intervention rate over 3 post-training rounds" style="width: 100%; height: auto;">
+        </div>
+        
+        <!-- Second figure caption -->
+        <div class="content has-text-justified" style="margin-top: 1.5rem;">
+          <p>
+            ARMADA results in a <strong>greater than two-fold reduction in human intervention rate</strong> compared to Sirius, 
+            showing potential in scalable deployment and adaptation.
+          </p>
+        </div>
+        
+      </div>
+    </div>
+    <!--/ Faster adaptation to deployment scenarios. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Generalization to unseen scenarios. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Generalization to unseen scenarios</h2>
+        
+        <!-- Main figure -->
+        <div class="publication-image" style="margin-top: 2rem;">
+          <img src="./static/images/ood_exp.pdf" alt="Multi-robot experiment scenes" style="width: 100%; height: auto;">
+        </div>
+        
+        <!-- Main figure caption -->
+        <div class="content has-text-justified" style="margin-top: 1.5rem; margin-bottom: 3rem;">
+          <p>
+            We deploy the pretrained <i>Fold towel</i> policy on Scene A, B, and C <strong style="color: rgb(43, 99, 179); font-size: 1.5em;">(in-domain)</strong> 
+            for online data collection, and evaluate the post-trained policy on Scene D <strong style="color: rgb(165, 34, 21); font-size: 1.5em;">(out-of-distribution)</strong>.
+            The baseline method only utilizes Scene A for data collection, and evaluates the policy on Scene D.
+          </p>
+        </div>
+        
+        <!-- Two column layout -->
+        <div class="columns is-centered">
+          <!-- First column -->
+          <div class="column is-half">
+            <div class="publication-image">
+              <img src="./static/images/multi_robot_ood_success_rate.pdf" alt="Task success rate on unseen scenario" style="width: 100%; height: auto;">
+            </div>
+            <div class="content has-text-justified" style="margin-top: 1.5rem;">
+              <p>
+                ARMADA <strong>boosts adaptation to unseen scenarios</strong> with paralleled policy deployment on multiple robots, 
+                compared to a traditional human-in-the-loop paradigm where one human operator attends to only one robot.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Second column -->
+          <div class="column is-half">
+            <div class="publication-image">
+              <img src="./static/images/multi_robot_ood_human_duration.pdf" alt="Human intervention duration during deployment" style="width: 100%; height: auto;">
+            </div>
+            <div class="content has-text-justified" style="margin-top: 1.5rem;">
+              <p>
+                ARMADA scales up collection of human intervention trajectory with more robots in parallel, raising human occupancy and <strong>yielding correction data 
+                more prolifically on diverse deployment scenarios</strong>, which helps the policy generalize to unseen scenarios.
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!--/ Generalization to unseen scenarios. -->
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="https://virlus.github.io/armada">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://virlus.github.io/armada" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            Template borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
