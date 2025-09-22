@@ -319,6 +319,20 @@
           When the FLOAT index exceeds the threshold, we consider it a failure.
         </div>
         
+        <style>
+          /* Scoped hack: normalize video tile heights within FLOAT carousels */
+          #fold-towel-carousel video,
+          #grasp-mango-carousel video,
+          #pour-marbles-carousel video {
+            display: block;
+            width: 100%;
+            height: auto !important;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background: #000;
+          }
+        </style>
+        
         <!-- Fold towel subsection -->
         <h3 class="title is-4" style="margin-top: 2rem;">Fold towel</h3>
         <div class="hero is-light is-small">
