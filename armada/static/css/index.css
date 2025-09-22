@@ -127,6 +127,12 @@ body {
   margin: 0;
 }
 
+.results-carousel .item:hover video {
+  transform: scale(1.2);
+  z-index: 10;
+  transition: transform 0.2s ease-in-out;
+}
+
 
 .interpolation-panel {
   background: #f5f5f5;
