@@ -116,8 +116,7 @@ body {
 
 .results-carousel .item {
   margin: 5px;
-  position: relative; /* Added for z-index to work */
-  /* overflow: hidden; Removed to allow magnification to show */
+  overflow: hidden;
   border: 1px solid #bbb;
   border-radius: 10px;
   padding: 0;
@@ -126,13 +125,6 @@ body {
 
 .results-carousel video {
   margin: 0;
-  display: block; /* Ensures no extra space below video */
-  transition: transform 0.2s ease-in-out, z-index 0.2s ease-in-out;
-}
-
-.results-carousel .item:hover video {
-  transform: scale(1.2);
-  z-index: 10;
 }
 
 
