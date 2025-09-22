@@ -155,8 +155,3 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
-
-#myVideo {
-  width: 2560px; /* Enlarge to 600 pixels wide */
-  height: 960px; /* Enlarge to 400 pixels tall */
-}
