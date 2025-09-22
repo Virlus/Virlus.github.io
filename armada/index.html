@@ -188,9 +188,9 @@
     <!-- Adaptive rewinding illustration. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <div class="columns">
+        <div class="columns is-vcentered">
           <!-- Left column - Video -->
-          <div class="column is-half">
+          <div class="column is-two-fifths">
             <h3 class="title is-4 has-text-centered">Illustration of adaptive rewinding</h3>
             <video autoplay muted controls playsinline height="100%" style="width: 100%;">
               <source src="./static/videos/adaptive_rewinding.mp4" type="video/mp4">
@@ -198,8 +198,8 @@
           </div>
           
           <!-- Right column - Captions -->
-          <div class="column is-half">
-            <div class="content has-text-justified" style="margin-top: 3rem;">
+          <div class="column is-three-fifths">
+            <div class="content has-text-justified">
               <p>
                 We design an adaptive rewinding mechanism that allows the robot to <strong>retrace a previous timestep</strong> 
                 while human operators can help <strong>reset the scene as it was</strong>,
@@ -578,8 +578,8 @@
         <!-- Main figure caption -->
         <div class="content has-text-justified" style="margin-top: 1.5rem; margin-bottom: 3rem;">
           <p>
-            We deploy the pretrained <i>Fold towel</i> policy on Scene A, B, and C <strong style="color: rgb(43, 99, 179); font-size: 1.5em;">(in-domain)</strong> 
-            for online data collection, and evaluate the post-trained policy on Scene D <strong style="color: rgb(165, 34, 21); font-size: 1.5em;">(out-of-distribution)</strong>.
+            We deploy the pretrained <i>Fold towel</i> policy on Scene A, B, and C <strong style="color: rgb(43, 99, 179); font-size: 1.05em;">(in-domain)</strong> 
+            for online data collection, and evaluate the post-trained policy on Scene D <strong style="color: rgb(165, 34, 21); font-size: 1.05em;">(out-of-distribution)</strong>.
             The baseline method only utilizes Scene A for data collection, and evaluates the policy on Scene D.
           </p>
         </div>
