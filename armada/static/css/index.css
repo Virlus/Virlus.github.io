@@ -121,6 +121,8 @@ body {
   border-radius: 10px;
   padding: 0;
   font-size: 0;
+  width: 100%;
+  height: auto;
 }
 
 .results-carousel video {
