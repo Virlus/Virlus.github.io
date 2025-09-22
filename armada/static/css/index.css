@@ -155,3 +155,16 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+/* Normalize carousel items to a consistent 16:9 aspect ratio
+   so all carousels (Fold towel, Grasp mango, Pour marbles) share the same scale. */
+.results-carousel .item {
+  aspect-ratio: 16 / 9;
+}
+
+.results-carousel .item video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
