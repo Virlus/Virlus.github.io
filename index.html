@@ -67,12 +67,52 @@
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px 10px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+            <tr onmouseout="armada_stop()" onmouseover="armada_start()"  bgcolor="#ffffd0">
+              <td style="padding:16px;width:20%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='armada_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/armada_tiny_banner.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+        
+                  </video></div>
+                  <img src='images/armada.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function armada_start() {
+                    document.getElementById('armada_image').style.opacity = "1";
+                  }
+        
+                  function armada_stop() {
+                    document.getElementById('armada_image').style.opacity = "0";
+                  }
+                  armada_stop()
+                </script>
+              </td>
+              <td style="padding:8px;width:80%;vertical-align:middle">
+                <a href="https://arxiv.org/abs/2510.02298" id="armada_title">
+                  <span class="papertitle">ARMADA: Autonomous Online Failure Detection and Human Shared Control Empower Scalable Real-world Deployment and Adaptation</span>
+                </a>
+                <br>
+                <strong>Wenye Yu</strong>, Jun Lv, Zixi Ying, Yang Jin, Chuan Wen†, Cewu Lu†
+                <br>
+                <em>In submission</em>, 2025
+                <br>
+                <a href="https://virlus.github.io/armada/">project page</a> /
+                <a href="https://arxiv.org/pdf/2510.02298">paper</a> /
+                <a href="https://github.com/Virlus/armada">code</a>
+                <p></p>
+                <p>ARMADA is a multi-robot deployment and adaptation system with human-in-the-loop shared control, featuring an autonomous online failure detection method named FLOAT.
+                  It enables scalable deployment of pretrained policies and thereby expedites policy adaptation to novel scenarios.
+                </p>
+              </td>
+            </tr>
+
             <tr bgcolor="#ffffd0">
               <td style="padding:16px;width:20%;vertical-align:middle">
                 <img src="images/robosplat.png" alt="PontTuset" width="160" style="border-style: none">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://arxiv.org/abs/2504.13175" id="MCG_journal">
+                <a href="https://arxiv.org/abs/2504.13175" id="robosplat_title">
                   <span class="papertitle">Novel Demonstration Generation with Gaussian Splatting Enables Robust One-Shot Manipulation</span>
                 </a>
                 <br>
@@ -94,7 +134,7 @@
                 <img src="images/sime.png" alt="PontTuset" width="160" style="border-style: none">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://arxiv.org/abs/2505.01396" id="MCG_journal">
+                <a href="https://arxiv.org/abs/2505.01396" id="sime_title">
                   <span class="papertitle">SIME: Enhancing Policy Self-Improvement with Modal-level Exploration</span>
                 </a>
                 <br>
@@ -117,7 +157,7 @@
                 <img src="images/hinf.png" alt="PontTuset" width="160" style="border-style: none">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://arxiv.org/abs/2404.14405" id="MCG_journal">
+                <a href="https://arxiv.org/abs/2404.14405" id="hinf_title">
                   <span class="papertitle">Learning H-Infinity Locomotion Control</span>
                 </a>
                 <br>
@@ -137,7 +177,7 @@
                 <img src="images/grutopia.png" alt="PontTuset" width="160" style="border-style: none">
               </td>
               <td style="padding:8px;width:80%;vertical-align:middle">
-                <a href="https://www.arxiv.org/abs/2407.10943" id="MCG_journal">
+                <a href="https://www.arxiv.org/abs/2407.10943" id="grutopia_title">
                   <span class="papertitle">GRUtopia: Dream General Robots in a City at Scale</span>
                 </a>
                 <br>
