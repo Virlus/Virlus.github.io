@@ -1,0 +1,7 @@
+[wenye-yu]
+id = "wenye-yu"
+name = "Wenye Yu"
+affiliation = "Shanghai Jiao Tong University"
+bio = "Research in robotics and embodied AI."
+[wenye-yu.links]
+github = "https://github.com/Virlus"

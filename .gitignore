@@ -1,0 +1,26 @@
+dist/
+.astro/
+.wrangler/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env
+.env.production
+.DS_Store
+.idea/
+
+.claude/worktrees/
+.playwright-cli/
+output/
+
+# Existing project pages copied by sync-legacy-assets.mjs
+/public/images/
+/public/data/
+/public/armada/
+/public/mipnerf/
+/public/mipnerf360/
+/public/zipnerf/
+/public/stylesheet.css
+/tmp/

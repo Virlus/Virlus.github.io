@@ -1,0 +1,47 @@
+---
+import { PROFILE, SITE } from "@site-config"
+import { loadSelectedPublications } from "@/lib/publications/loader"
+import { getLatestUpdates } from "@/lib/updates"
+import Layout from "@/layouts/Layout.astro"
+import CardGroup from "@/components/base/card/CardGroup.astro"
+import Section from "@/components/layout/Section.astro"
+import Profile from "@/components/profile/Profile.astro"
+import PubCard from "@/components/publications/PubCard.astro"
+import UpdatesInline from "@/components/timeline/UpdatesInline.astro"
+import { Content as HonorsContent } from "@/content/honors.md"
+import { Content as ServicesContent } from "@/content/services.md"
+import { Content as MiscContent } from "@/content/misc.md"
+
+const updates = await getLatestUpdates(SITE.home.updateCount)
+const publications = (await loadSelectedPublications()).slice(
+  0,
+  SITE.home.publicationCount,
+)
+---
+
+<Layout title="Wenye Yu" type="profile">
+  <Profile profile={PROFILE} />
+  <Section title="News" moreLink="/news/">
+    <UpdatesInline renderedUpdates={updates} />
+  </Section>
+  <Section title="Selected publications" moreLink="/publications/">
+    <CardGroup class="selected-publications">
+      {publications.map((pub) => <PubCard pub={pub} filterableTags={false} />)}
+    </CardGroup>
+  </Section>
+  <Section title="Selected honors and awards">
+    <prose-content><HonorsContent /></prose-content>
+  </Section>
+  <Section title="Service">
+    <prose-content><ServicesContent /></prose-content>
+  </Section>
+  <Section title="Miscellaneous">
+    <prose-content><MiscContent /></prose-content>
+  </Section>
+</Layout>
+
+<style>
+  .selected-publications {
+    gap: var(--space-s);
+  }
+</style>

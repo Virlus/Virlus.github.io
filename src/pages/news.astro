@@ -1,0 +1,15 @@
+---
+import CommonLayout from "@/layouts/CommonLayout.astro"
+import UpdatesInline from "@/components/timeline/UpdatesInline.astro"
+import { getLatestUpdates } from "@/lib/updates"
+const updates = await getLatestUpdates()
+---
+
+<CommonLayout
+  title="News"
+  description="Research updates, papers, and talks."
+  breadcrumbs={[{ label: "News", icon: "research" }]}
+  prose={false}
+>
+  <UpdatesInline renderedUpdates={updates} />
+</CommonLayout>

@@ -1,0 +1,4 @@
+- [2025.06] Outstanding Graduates in Shanghai (Top 3%)
+- [2024.06] SenseTime Scholarship (top 25 undergraduates in China)
+- [2023.09] National Scholarship
+- [2022.09] National Scholarship (Highest Honour for undergraduates in China)
