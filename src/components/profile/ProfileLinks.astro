@@ -1,6 +1,7 @@
 ---
 import Button from "@/components/base/Button.astro"
 import Icon from "@/components/base/Icon.astro"
+import Link from "@/components/base/Link.astro"
 
 import { getProcessedProfileLinks, type ProfileLinkConfig } from "./helper"
 
@@ -9,8 +10,8 @@ interface Props {
   class?: string
   /** Which links to render: true for all, false for none, or an ordered list */
   keys?: boolean | string[]
-  /** "button" gives each link button chrome; "icon" renders a bare icon link */
-  as?: "button" | "icon"
+  /** Choose button, icon, or plain text links. */
+  as?: "button" | "icon" | "text"
 }
 
 const { links, class: className = "", keys = true, as = "button" } = Astro.props
@@ -28,7 +29,9 @@ const processedLinks = getProcessedProfileLinks(links, keys)
         const rel = NON_IDENTITY_KEYS.has(key) ? undefined : "me"
         return (
           <li>
-            <Button
+            {as === "text" ? (
+              <Link href={href} external={key !== "email" && isExternal} rel={rel} underline>{label}</Link>
+            ) : <Button
               href={href}
               external={isExternal}
               variant={as === "icon" ? "ghost" : "outline"}
@@ -39,7 +42,7 @@ const processedLinks = getProcessedProfileLinks(links, keys)
             >
               <Icon name={iconName} size={as === "icon" ? "1.5rem" : undefined} />
               <span class="sr-only" set:html={label} />
-            </Button>
+            </Button>}
           </li>
         )
       })}
@@ -54,6 +57,18 @@ const processedLinks = getProcessedProfileLinks(links, keys)
     padding: 0;
     margin: 0;
     list-style: none;
+  }
+
+  .profile-links-text {
+    gap: 0.25rem 1rem;
+    color: var(--primary);
+    font-size: var(--step--1);
+  }
+
+  .profile-links-text :global(a) {
+    display: inline-block;
+    padding-block: 0.5rem;
+    white-space: nowrap;
   }
 
   /* Header variant: ghost squares matching the other header controls, so the

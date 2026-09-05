@@ -1,6 +1,5 @@
 ---
 import CommonLayout from "@/layouts/CommonLayout.astro"
-import CardGroup from "@/components/base/card/CardGroup.astro"
 import { loadAllPublications } from "@/lib/publications/loader"
 import PubCard from "@/components/publications/PubCard.astro"
 const { allPublicationsFlat } = await loadAllPublications()
@@ -17,7 +16,5 @@ const projects = allPublicationsFlat.filter((pub) => pub.selected)
     Selected work on human-in-the-loop robot learning, manipulation, and robust
     control. Open each project website for videos, results, and code.
   </p>
-  <CardGroup
-    >{projects.map((pub) => <PubCard pub={pub} filterableTags={false} />)}</CardGroup
-  >
+  <div>{projects.map((pub) => <PubCard pub={pub} />)}</div>
 </CommonLayout>

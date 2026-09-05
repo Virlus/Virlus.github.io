@@ -6,7 +6,6 @@ import Badge from "@/components/base/Badge.astro"
 import Icon from "@/components/base/Icon.astro"
 import avatar from "@/assets/profile.jpg"
 
-import EmailLink from "./EmailLink.astro"
 import Pronunciation from "./Pronunciation.astro"
 import ProfileLinks from "./ProfileLinks.astro"
 import { getProfileLinkPlacement } from "./helper"
@@ -51,9 +50,8 @@ const aboutLinks = getProfileLinkPlacement("about")
         <p class="profile-tagline">{profile.tagline}</p>
       </div>
 
+      {aboutLinks.length > 0 && <ProfileLinks keys={aboutLinks} as="text" />}
       <div class="profile-meta">
-        <EmailLink email={profile.email} />
-
         {profile.phone && (
             <span class="profile-contact-item">
               <Icon name="mingcute:phone-line" />
@@ -76,12 +74,6 @@ const aboutLinks = getProfileLinkPlacement("about")
 <prose-content>
   <AboutContent />
 </prose-content>
-
-{aboutLinks.length > 0 && (
-    <footer class="profile-footer">
-      <ProfileLinks keys={aboutLinks} />
-    </footer>
-  )}
 
 <style>
   .profile-header {
@@ -110,6 +102,10 @@ const aboutLinks = getProfileLinkPlacement("about")
   /* Contact details and the pronunciation trigger share one wrapping row.
      The guide is a tooltip now rather than an inline panel, so nothing in
      this row changes height when it opens and the items can sit centred. */
+  .profile-meta:empty {
+    display: none;
+  }
+
   .profile-meta {
     display: flex;
     flex-wrap: wrap;
@@ -146,16 +142,6 @@ const aboutLinks = getProfileLinkPlacement("about")
 
   .profile-tagline {
     color: var(--foreground);
-  }
-
-  .profile-footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--space-2xs) var(--space-s);
-    padding-block-start: var(--space-s);
-    padding-inline: var(--space-s);
-    color: var(--muted-foreground);
   }
 
   .profile-contact-item {

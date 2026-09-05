@@ -59,7 +59,11 @@ export const PROFILE: ProfileConfig = {
     twitter: { href: "https://x.com/Jason_ywy", label: "Twitter / X" },
   },
   highlightLinks: ["googleScholar"],
-  linksPlacement: { header: false, about: true, footer: false },
+  linksPlacement: {
+    header: false,
+    about: ["email", "googleScholar", "github", "twitter"],
+    footer: false,
+  },
 }
 
 export const NAV_LINKS: LinkConfig[] = [
