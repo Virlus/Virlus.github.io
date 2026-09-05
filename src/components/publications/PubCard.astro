@@ -43,7 +43,7 @@ const links = [...pub.links].sort((a, b) => {
   {pub.image && (
     <div class="publication-media">
       {pub.previewVideo ? (
-        <video controls muted loop playsinline preload="none" poster={imageSrc} aria-label={`Research demonstration for ${pub.title}`}>
+        <video autoplay controls muted loop playsinline preload="metadata" poster={imageSrc} aria-label={`Research demonstration for ${pub.title}`}>
           <source src={pub.previewVideo} type="video/mp4" />
           <a href={pub.previewVideo}>Watch the research demonstration</a>
         </video>
