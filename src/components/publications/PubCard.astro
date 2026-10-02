@@ -59,8 +59,8 @@ const links = [...pub.links].sort((a, b) => {
     <p class="bibliography-authors" set:html={authors} />
     {(pub.publisher || pub.year) && (
       <p class="bibliography-details">
-        {pub.publisher}{pub.publisher && pub.year && " · "}{pub.year}
-        {pub.award && <span class="publication-award"> · {pub.award}</span>}
+        {pub.publisher}{pub.publisher && pub.year && (pub.award?.startsWith("(") ? " " : " · ")}{pub.year}
+        {pub.award && <span class="publication-award">{pub.award.startsWith("(") ? " " : " · "}{pub.award}</span>}
       </p>
     )}
     {pub.abstract && <p class="publication-abstract">{pub.abstract}</p>}
