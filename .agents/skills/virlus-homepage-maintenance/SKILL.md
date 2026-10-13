@@ -7,24 +7,27 @@ description: 维护 Wenye Yu 的 Virlus.github.io 学术主页与项目页面。
 
 ## 同一项目，所有展示入口一致
 
-用户要求：同一项目可能出现在多个 URL。任何项目相关属性的修改，都必须检查它在各个入口的呈现；不能只改或只验证 Selected publications。
+用户要求：同一项目可能出现在多个 URL。任何项目相关属性的修改，都必须检查它在各个入口的呈现；不能只改或只验证首页 Research。
 
 1. 修改前搜索项目名称、BibTeX key、媒体路径及组件调用，列出受影响的页面。以下是当前入口，不能当作永久完整清单：
 
    | 入口 | URL | 源码 |
    | --- | --- | --- |
-   | 首页 Selected publications | `/` | `src/pages/index.astro` |
-   | 完整论文列表 All Publications / Publications | `/publications/` | `src/pages/publications.astro` |
+   | 首页 Research（全部研究） | `/` | `src/pages/index.astro` |
+   | 旧论文入口（跳转到首页 Research） | `/publications/` | `src/pages/publications.astro`（重定向） |
    | 项目列表 Projects | `/projects/` | `src/pages/projects/index.astro` |
    | 独立项目网站，例如 ARMADA | `/armada/` | `armada/index.html` |
 
-2. 三个列表页共用 `src/components/publications/PubCard.astro`，论文数据统一来自 `src/content/publications/main.bib`，经过 `src/lib/publications/` 加载。内容属性在共享数据中修改，列表展示和交互在共享组件中修改，避免逐页复制独立实现。
+2. 首页与项目列表共用 `src/components/publications/PubCard.astro`，论文数据统一来自 `src/content/publications/main.bib`，经过 `src/lib/publications/` 加载。内容属性在共享数据中修改，列表展示和交互在共享组件中修改，避免逐页复制独立实现。
 3. 检查本次修改涉及的标题、作者及贡献标记、会议信息、年份、简介、奖项、链接、图片、视频及交互行为。共享组件相同只是源码证据，不能替代逐 URL 的运行验证。
 4. 独立项目网站可能有自己的内容副本，也必须查找和同步本次改动涉及的共同事实。摘要与长篇说明、预览视频与完整讲解视频可以有不同用途；不把不同用途的内容机械改成完全相同。第三方托管页面无法随本仓库更新时，在结果中说明未覆盖项。
 5. 页面可以有不同的项目子集、排序和布局；同一项目的共同属性及同用途媒体行为应一致。检查新增入口、移动路由或分页是否扩大了验证范围。
 
 ## 已确认的界面偏好
 
+- 首页统一为 Research，展示全部研究，不再区分 Selected publications 和 All Publications，也不通过卡片高亮标记 selected。导航直接链接 `/#research`；旧 `/publications/` 入口重定向到该部分。
+- 所有研究列表按时间倒序排列（年份、月份；同月按 `main.bib` 顺序），不按是否 selected 或作者排名排序。VaM 目前是最新研究，保持首位；有更新工作时按实际时间调整。
+- Noe-0 Research Preview 保留 `Noematrix Team` 署名；RoboRSI 使用 arXiv 论文的完整作者列表与贡献标记。
 - 论文直接展示标题、作者与会议信息、简介和普通文字链接。简介不需要点击展开。
 - 不增加论文标签、标签筛选、BibTeX 复制、邮箱复制等冗余操作。
 - Email、Scholar、GitHub、Twitter / X 以并排文字链接呈现，手机宽度也应检查。

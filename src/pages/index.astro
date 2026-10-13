@@ -1,6 +1,6 @@
 ---
 import { PROFILE, SITE } from "@site-config"
-import { loadSelectedPublications } from "@/lib/publications/loader"
+import { loadAllPublications } from "@/lib/publications/loader"
 import { getLatestUpdates } from "@/lib/updates"
 import Layout from "@/layouts/Layout.astro"
 import Section from "@/components/layout/Section.astro"
@@ -12,10 +12,7 @@ import { Content as ServicesContent } from "@/content/services.md"
 import { Content as MiscContent } from "@/content/misc.md"
 
 const updates = await getLatestUpdates(SITE.home.updateCount)
-const publications = (await loadSelectedPublications()).slice(
-  0,
-  SITE.home.publicationCount,
-)
+const { allPublicationsFlat: publications } = await loadAllPublications()
 ---
 
 <Layout title="Wenye Yu" type="profile">
@@ -23,7 +20,7 @@ const publications = (await loadSelectedPublications()).slice(
   <Section title="News" moreLink="/news/">
     <UpdatesInline renderedUpdates={updates} />
   </Section>
-  <Section title="Selected publications" moreLink="/publications/">
+  <Section title="Research">
     <div>
       {publications.map((pub) => <PubCard pub={pub} />)}
     </div>

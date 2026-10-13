@@ -80,8 +80,6 @@ export const SiteConfigSchema = z.object({
     careerHighlightCount: z.number().int().nonnegative().default(5),
     /** Number of recent updates to show on the home page. Set to 0 to hide. */
     updateCount: z.number().int().nonnegative().default(3),
-    /** Number of selected publications to show on the home page. Set to 0 to hide. */
-    publicationCount: z.number().int().nonnegative().default(3),
   }),
 
   // Theme settings

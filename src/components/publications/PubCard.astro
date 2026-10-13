@@ -25,7 +25,11 @@ const imageSrc = optimizedImage?.src ?? pub.image
 const authors = pub.authorData.hasMore
   ? `${pub.authorData.displayFirstAuthors} ${pub.authorData.hiddenAuthors}${pub.authorData.displayLastAuthors ? `, ${pub.authorData.displayLastAuthors}` : ""}`
   : pub.authorData.displayFirstAuthors
-const linkLabels: Record<string, string> = { Website: "Project", PDF: "Paper" }
+const linkLabels: Record<string, string> = {
+  Website: "Project",
+  PDF: "Paper",
+  Post: "Blog",
+}
 const linkOrder = ["Website", "PDF", "Code"]
 const links = [...pub.links].sort((a, b) => {
   const rank = (label: string) => {

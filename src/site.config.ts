@@ -37,7 +37,6 @@ export const SITE: SiteConfig = {
   home: {
     careerHighlightCount: 0,
     updateCount: 4,
-    publicationCount: 3,
   },
 
   favicon: "/favicon.ico",
@@ -68,7 +67,7 @@ export const PROFILE: ProfileConfig = {
 
 export const NAV_LINKS: LinkConfig[] = [
   { href: "/projects/", label: "Projects" },
-  { href: "/publications/", label: "Publications" },
+  { href: "/#research", label: "Research" },
   { href: "/news/", label: "News" },
 ]
 

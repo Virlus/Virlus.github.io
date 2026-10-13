@@ -3,17 +3,17 @@ import CommonLayout from "@/layouts/CommonLayout.astro"
 import { loadAllPublications } from "@/lib/publications/loader"
 import PubCard from "@/components/publications/PubCard.astro"
 const { allPublicationsFlat } = await loadAllPublications()
-const projects = allPublicationsFlat.filter((pub) => pub.selected)
+const projects = allPublicationsFlat
 ---
 
 <CommonLayout
   title="Projects"
-  description="Selected projects in robotics and embodied AI."
+  description="Projects in robotics and embodied AI."
   breadcrumbs={[{ label: "Projects", icon: "folder-open" }]}
   prose={false}
 >
   <p>
-    Selected work on human-in-the-loop robot learning, manipulation, and robust
+    Research on human-in-the-loop robot learning, manipulation, and robust
     control. Open each project website for videos, results, and code.
   </p>
   <div>{projects.map((pub) => <PubCard pub={pub} />)}</div>

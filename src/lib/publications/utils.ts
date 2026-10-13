@@ -517,7 +517,7 @@ function getHighlightedAuthorPosition(
 }
 
 /**
- * Sort publications by year (descending) with configurable within-year ordering
+ * Sort research by year and month (descending), preserving source order for ties
  * @param publications - Array of publications
  * @param config - Publication configuration (optional, for within-year sort)
  * @returns Sorted array of publications
@@ -535,50 +535,6 @@ export function sortPublications(
     const monthB = b.month ?? 0
     return monthB - monthA
   })
-}
-
-/**
- * Sort publications by relevance: selected first, then author position ascending, then year descending, then month descending
- */
-export function sortPublicationsByRelevance(
-  publications: Publication[],
-  config: PublicationConfig,
-): Publication[] {
-  return [...publications].sort((a, b) => {
-    // selected=true first
-    const selA = a.selected ? 0 : 1
-    const selB = b.selected ? 0 : 1
-    if (selA !== selB) return selA - selB
-
-    // author position ascending
-    const posA = getHighlightedAuthorPosition(a.authors, config.highlightAuthor)
-    const posB = getHighlightedAuthorPosition(b.authors, config.highlightAuthor)
-    if (posA !== posB) return posA - posB
-
-    // year descending
-    const yearA = a.year || 0
-    const yearB = b.year || 0
-    if (yearA !== yearB) return yearB - yearA
-
-    // month descending
-    const monthA = a.month ?? 0
-    const monthB = b.month ?? 0
-    return monthB - monthA
-  })
-}
-
-/**
- * Filter publications by selected status
- * @param publications - Array of publications
- * @param limit - Maximum number of publications to return
- * @returns Array of selected publications
- */
-export function getSelectedPublications(
-  publications: Publication[],
-  limit?: number,
-): Publication[] {
-  const selected = publications.filter((pub) => pub.selected === true)
-  return limit ? selected.slice(0, limit) : selected
 }
 
 /**

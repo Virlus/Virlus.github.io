@@ -6,11 +6,9 @@ import { PUB_CONFIG } from "@site-config"
 import {
   expandHierarchicalKeywords,
   getPublicationData,
-  getSelectedPublications,
   parseBibTeX,
   parsePublicationKeywords,
   sortPublications,
-  sortPublicationsByRelevance,
 } from "./utils"
 import bibContent from "/src/content/publications/main.bib?raw"
 
@@ -50,12 +48,8 @@ export async function loadAllPublications() {
 
     const years = Array.from(yearsSet).sort((a, b) => b - a)
 
-    // Flat list sorted by relevance
-    const relevanceSorted = sortPublicationsByRelevance(
-      allPublications,
-      PUB_CONFIG,
-    )
-    const allPublicationsFlat = relevanceSorted.map((pub) =>
+    // Every research entry point uses the same chronological order.
+    const allPublicationsFlat = sorted.map((pub) =>
       getPublicationData(pub, PUB_CONFIG),
     )
 
@@ -81,25 +75,5 @@ export async function loadAllPublications() {
       allPublicationsFlat: [],
       allKeywords: [] as { keyword: string; count: number }[],
     }
-  }
-}
-
-/**
- * Load and process selected publications sorted by year
- * @returns Array of selected publications
- */
-export async function loadSelectedPublications() {
-  try {
-    const allPublications = parseBibTeX(bibContent)
-    const selectedPublications = getSelectedPublications(allPublications)
-    const sortedPublications = sortPublications(
-      selectedPublications,
-      PUB_CONFIG,
-    )
-
-    return sortedPublications.map((pub) => getPublicationData(pub, PUB_CONFIG))
-  } catch (error) {
-    console.error("Error loading selected publications:", error)
-    return []
   }
 }

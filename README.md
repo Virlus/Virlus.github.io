@@ -22,7 +22,9 @@ corepack pnpm dev
 - Honors, service, and interests: `src/content/honors.md`, `services.md`, and `misc.md`
 - Profile photo: `src/assets/profile.jpg`
 
-Publication fields `selected`, `image`, `imagealt`, `award`, and `previewvideo` control presentation. `authormarkers` preserves the original paper's author symbols using one-based positions, e.g. `1:*,2:*,8:†`. These fields do not appear in the exported citation. Keep full author names in the BibTeX `author` field.
+The homepage displays every research entry in reverse chronological order, with no selected/all split. Within a month, the order in `main.bib` breaks ties; keep VaM first while it is the newest work. The legacy `/publications/` URL redirects to `/#research`.
+
+Publication fields `image`, `imagealt`, `award`, and `previewvideo` control presentation. `authormarkers` preserves the original paper's author symbols using one-based positions, e.g. `1:*,2:*,8:†`. These fields do not appear in the exported citation. Keep full author names in the BibTeX `author` field.
 
 ## Existing project URLs
 
