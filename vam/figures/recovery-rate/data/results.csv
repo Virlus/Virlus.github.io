@@ -1,0 +1,13 @@
+task,method,mean,sample_sd,color
+Box Assembly,VaM,54.5,,#FACA66
+Laundry Folding,VaM,86.4,,#FACA66
+Magnetic Bus Assembly,VaM,33.3,,#FACA66
+Box Assembly,Without value caching,50.0,,#E08E79
+Laundry Folding,Without value caching,58.8,,#E08E79
+Magnetic Bus Assembly,Without value caching,7.4,,#E08E79
+Box Assembly,Without offline RL warmup,25.3,,#02709D
+Laundry Folding,Without offline RL warmup,72.7,,#02709D
+Magnetic Bus Assembly,Without offline RL warmup,27.3,,#02709D
+Box Assembly,RECAP,42.4,,#99B898
+Laundry Folding,RECAP,76.6,,#99B898
+Magnetic Bus Assembly,RECAP,13.3,,#99B898

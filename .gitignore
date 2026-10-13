@@ -24,3 +24,12 @@ output/
 /public/zipnerf/
 /public/stylesheet.css
 /tmp/
+
+# VaM publication assets and local-only working files
+/public/vam/
+/vam/preview.log
+/vam/preview.pid
+/vam/assets/box-100x.mp4
+/vam/assets/replacement/*.npz
+/vam/assets/replacement/*-source.json
+/vam/**/__pycache__/

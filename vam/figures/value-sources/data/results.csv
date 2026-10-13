@@ -1,0 +1,10 @@
+task,method,mean,sample_sd,color
+Box Assembly,Original LfE value,96.7,2.9,#FACA66
+Laundry Folding,Original LfE value,88.9,10.2,#FACA66
+Magnetic Bus Assembly,Original LfE value,76.7,5.8,#FACA66
+Box Assembly,Demo-trained value,80.0,13.2,#99B898
+Laundry Folding,Demo-trained value,71.1,20.4,#99B898
+Magnetic Bus Assembly,Demo-trained value,40.0,10.0,#99B898
+Box Assembly,Post-warmup value,85.0,13.2,#02709D
+Laundry Folding,Post-warmup value,68.9,10.2,#02709D
+Magnetic Bus Assembly,Post-warmup value,50.0,10.0,#02709D

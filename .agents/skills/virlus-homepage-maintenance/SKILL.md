@@ -31,6 +31,11 @@ description: 维护 Wenye Yu 的 Virlus.github.io 学术主页与项目页面。
 - 项目卡片中的视频预览静音、自动、循环、行内播放：`autoplay muted loop playsinline`，保留手动暂停能力。ARMADA 使用 `previewvideo` 字段；此规则适用于所有同用途项目预览，不限于 ARMADA。
 - 上述是本仓库的长期偏好；用户后续明确改变要求时同步更新。
 
+## 未公开项目的本地调试
+
+- 用户明确要求未公开的论文项目仅在本地调试时，在仓库根目录建立与 `armada/` 同级的独立目录；不加入公开论文列表、静态资源同步清单或部署产物。
+- 调试目录加入本地 `.git/info/exclude`，预览服务仅绑定 `127.0.0.1`；不上传论文、媒体或预览到外部服务。用户明确要求同 Wi-Fi 预览时，可额外绑定当前 Wi-Fi 内网 IP，保留 localhost；这不代表允许公网部署或端口转发。获得明确发布授权后再调整公开部署隔离措施。
+
 ## 检查与发布
 
 - 使用 `corepack pnpm`，遵循 `package.json` 锁定的版本。项目通过 GitHub Actions 发布到 `https://virlus.github.io/`，当前部署分支为 `master`，工作流为 `.github/workflows/deploy.yml`。
