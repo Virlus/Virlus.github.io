@@ -31,6 +31,7 @@ description: 维护 Wenye Yu 的 Virlus.github.io 学术主页与项目页面。
 - 论文直接展示标题、作者与会议信息、简介和普通文字链接。简介不需要点击展开。
 - 不增加论文标签、标签筛选、BibTeX 复制、邮箱复制等冗余操作。
 - Email、Scholar、GitHub、Twitter / X 以并排文字链接呈现，手机宽度也应检查。
+- VaM 项目页的 arXiv、Code、Twitter 资源按钮使用左右双色徽章样式：左侧白底 logo，右侧以 logo 的品牌主色为背景；适配手机排列。
 - 项目卡片中的视频预览静音、自动、循环、行内播放：`autoplay muted loop playsinline`，保留手动暂停能力。ARMADA 使用 `previewvideo` 字段；此规则适用于所有同用途项目预览，不限于 ARMADA。
 - 上述是本仓库的长期偏好；用户后续明确改变要求时同步更新。
 

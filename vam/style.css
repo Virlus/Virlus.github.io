@@ -12,4 +12,62 @@
 .result-block .table-note{margin-top:-12px;margin-bottom:28px}#results .table-wrap{scrollbar-width:thin}
 
 
-.paper-links{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin:30px 0}.paper-resource{display:flex;align-items:center;gap:10px;color:#454b50;border:1px solid #d8d5d2;border-radius:24px;padding:10px 20px;font-size:17px;line-height:1.3;background:#f6f6f5}.paper-resource svg{width:24px;height:24px;flex-shrink:0}.paper-resource:first-child svg{width:44px}.paper-resource small{display:block;font-size:13px;color:#74787c;margin-top:3px}.citation-bib{background:#f6f6f5;border-radius:6px;padding:26px;font-size:16px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.citation-bib code{font:inherit}#results{padding-bottom:0}#results>#qualitative{margin-top:64px}#results>#value-replacement{padding-bottom:80px}.section-heading .title{font-size:32px}.section-heading{float:none;text-align:center}@media(max-width:700px){.paper-links{gap:10px}.paper-resource{padding:9px 14px}.citation-bib{padding:18px;font-size:14px}.section-heading .title{font-size:27px}#results>#qualitative,#results>#value-replacement{margin-left:-20px;margin-right:-20px}}
+.paper-links{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin:30px 0}.citation-bib{background:#f6f6f5;border-radius:6px;padding:26px;font-size:16px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.citation-bib code{font:inherit}#results{padding-bottom:0}#results>#qualitative{margin-top:64px}#results>#value-replacement{padding-bottom:80px}.section-heading .title{font-size:32px}.section-heading{float:none;text-align:center}@media(max-width:700px){.paper-links{gap:10px}.citation-bib{padding:18px;font-size:14px}.section-heading .title{font-size:27px}#results>#qualitative,#results>#value-replacement{margin-left:-20px;margin-right:-20px}}
+
+/* Two-tone resource badges, with a white logo panel and brand-colored label. */
+.paper-resource {
+  --resource-brand: #181717;
+  display: inline-flex;
+  align-items: stretch;
+  padding: 0;
+  gap: 0;
+  border: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+  color: var(--resource-brand);
+  font: 600 17px/1 Arial, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 2px 5px #22181018;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.resource-arxiv { --resource-brand: #b31b1b; }
+.resource-github { --resource-brand: #181717; }
+.resource-twitter { --resource-brand: #1da1f2; }
+.resource-logo {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  min-height: 44px;
+  flex-shrink: 0;
+  background: #fff;
+}
+.resource-logo svg { width: 23px; height: 23px; }
+.resource-logo .arxiv-icon { width: 23px; height: 28px; object-fit: contain; }
+.resource-label {
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  background: var(--resource-brand);
+  color: #fff;
+  letter-spacing: .02em;
+}
+.resource-twitter .resource-label { color: #062b42; }
+.paper-resource[href]:hover {
+  color: var(--resource-brand);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px #22181026;
+}
+.paper-resource:focus-visible { outline: 3px solid var(--resource-brand); outline-offset: 4px; }
+@media (max-width: 800px) {
+  .paper-links { gap: 10px; }
+  .paper-resource { font-size: 15px; }
+  .resource-logo { width: 36px; min-height: 40px; }
+  .resource-logo svg { width: 21px; height: 21px; }
+  .resource-logo .arxiv-icon { width: 21px; height: 25px; }
+  .resource-label { padding: 0 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .paper-resource { transition: none; }
+  .paper-resource[href]:hover { transform: none; }
+}
