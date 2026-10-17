@@ -1,12 +1,14 @@
 ---
+import { Image } from "astro:assets"
 import { PROFILE, SITE } from "@site-config"
 import { loadAllPublications } from "@/lib/publications/loader"
 import { getLatestUpdates } from "@/lib/updates"
-import Layout from "@/layouts/Layout.astro"
-import Section from "@/components/layout/Section.astro"
-import Profile from "@/components/profile/Profile.astro"
+import EditorialLayout from "@/layouts/EditorialLayout.astro"
+import ProfileLinks from "@/components/profile/ProfileLinks.astro"
 import PubCard from "@/components/publications/PubCard.astro"
 import UpdatesInline from "@/components/timeline/UpdatesInline.astro"
+import avatar from "@/assets/profile.jpg"
+import { Content as AboutContent } from "@/content/about.md"
 import { Content as HonorsContent } from "@/content/honors.md"
 import { Content as ServicesContent } from "@/content/services.md"
 import { Content as MiscContent } from "@/content/misc.md"
@@ -15,23 +17,96 @@ const updates = await getLatestUpdates(SITE.home.updateCount)
 const { allPublicationsFlat: publications } = await loadAllPublications()
 ---
 
-<Layout title="Wenye Yu" type="profile">
-  <Profile profile={PROFILE} />
-  <Section title="News" moreLink="/news/">
-    <UpdatesInline renderedUpdates={updates} />
-  </Section>
-  <Section title="Research">
-    <div>
+<EditorialLayout>
+  <section
+    id="about"
+    class="editorial-hero editorial-container"
+    aria-labelledby="profile-name"
+  >
+    <div class="editorial-intro">
+      <p class="editorial-eyebrow">Robotics &amp; Embodied AI</p>
+      <h1 id="profile-name">{PROFILE.name}</h1>
+      <p class="editorial-role">
+        Ph.D. Student at Shanghai Jiao Tong University
+      </p>
+      <prose-content class="editorial-biography"
+        ><AboutContent /></prose-content
+      >
+      <ProfileLinks
+        keys={["email", "googleScholar", "github", "twitter"]}
+        as="text"
+        showIcons
+      />
+    </div>
+    <figure class="editorial-portrait">
+      <div class="editorial-image-frame">
+        <Image
+          src={avatar}
+          alt="Wenye Yu"
+          width={480}
+          height={600}
+          fit="cover"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <figcaption>Photograph by Annie Wang</figcaption>
+    </figure>
+  </section>
+
+  <section
+    id="news"
+    class="editorial-section editorial-news"
+    aria-labelledby="news-title"
+  >
+    <div class="editorial-container">
+      <div class="editorial-section-heading">
+        <h2 id="news-title"><span aria-hidden="true">//</span> News</h2>
+        <a href="/news/" class="editorial-more">All news ↗</a>
+      </div>
+      <UpdatesInline renderedUpdates={updates} />
+    </div>
+  </section>
+
+  <section
+    id="research"
+    class="editorial-section editorial-research editorial-container"
+    aria-labelledby="research-title"
+  >
+    <div class="editorial-section-heading">
+      <h2 id="research-title"><span aria-hidden="true">//</span> Research</h2>
+    </div>
+    <div class="editorial-publications">
       {publications.map((pub) => <PubCard pub={pub} />)}
     </div>
-  </Section>
-  <Section title="Selected honors and awards">
-    <prose-content><HonorsContent /></prose-content>
-  </Section>
-  <Section title="Service">
-    <prose-content><ServicesContent /></prose-content>
-  </Section>
-  <Section title="Miscellaneous">
-    <prose-content><MiscContent /></prose-content>
-  </Section>
-</Layout>
+  </section>
+
+  <section
+    id="awards-and-service"
+    class="editorial-section editorial-background"
+    aria-label="Honors, service, and interests"
+  >
+    <div class="editorial-container editorial-details-grid">
+      <section class="editorial-honors" aria-labelledby="honors-title">
+        <h2 id="honors-title">
+          <span aria-hidden="true">//</span>
+          Selected honors and awards
+        </h2>
+        <prose-content><HonorsContent /></prose-content>
+      </section>
+      <div class="editorial-aside">
+        <section aria-labelledby="service-title">
+          <h2 id="service-title"><span aria-hidden="true">//</span> Service</h2>
+          <prose-content><ServicesContent /></prose-content>
+        </section>
+        <section aria-labelledby="misc-title">
+          <h2 id="misc-title">
+            <span aria-hidden="true">//</span>
+            Miscellaneous
+          </h2>
+          <prose-content><MiscContent /></prose-content>
+        </section>
+      </div>
+    </div>
+  </section>
+</EditorialLayout>

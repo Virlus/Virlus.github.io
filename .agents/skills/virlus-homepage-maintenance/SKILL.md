@@ -25,12 +25,20 @@ description: 维护 Wenye Yu 的 Virlus.github.io 学术主页与项目页面。
 
 ## 已确认的界面偏好
 
+- 个人首页采用 [Academic Homepage Templates 的 Editorial 风格](https://github.com/Galaxy-Dawn/academic-homepage-templates/tree/main/themes/editorial)：暖白纸色、酒红点缀、衬线排版和矩形肖像。本轮视觉改版只作用于个人首页，不改各项目独立主页；首页样式通过 `body.editorial` 隔离，继续复用现有内容和论文数据。
+- 首页改版先完成本地预览，用户确认后才 push 到 remote 同步；用户尚未确认时保持本地改动，不触发线上部署。
 - 首页统一为 Research，展示全部研究，不再区分 Selected publications 和 All Publications，也不通过卡片高亮标记 selected。导航直接链接 `/#research`；旧 `/publications/` 入口重定向到该部分。
 - 所有研究列表按时间倒序排列（年份、月份；同月按 `main.bib` 顺序），不按是否 selected 或作者排名排序。VaM 目前是最新研究，保持首位；有更新工作时按实际时间调整。
 - Noe-0 Research Preview 保留 `Noematrix Team` 署名；RoboRSI 使用 arXiv 论文的完整作者列表与贡献标记。
 - 论文直接展示标题、作者与会议信息、简介和普通文字链接。简介不需要点击展开。
+- 首页 Research 左侧所有图片和视频直接按自身比例展示，不加外边框、底色或固定比例的大框。
 - 不增加论文标签、标签筛选、BibTeX 复制、邮箱复制等冗余操作。
-- Email、Scholar、GitHub、Twitter / X 以并排文字链接呈现，手机宽度也应检查。
+- 首页顶部导航使用 About、Research、News、Awards and Service；最后一项链接到本页 `/#awards-and-service` 的荣誉、服务与兴趣区域，不再链接旧模板的 Projects 列表。
+- 首页顶部不显示 `[WY]` 标识，Research 标题旁不显示作品数量。
+- 首页页脚以一句 “Template from Academic Homepage Templates” 致谢，模板名称链接到 `https://galaxy-dawn.github.io/academic-homepage-templates/`，不显示 Source 链接。
+- 首页照片旁不显示 Shanghai, China 等地点，保留摄影署名。
+- Email、Scholar、GitHub、Twitter / X 以并排的 logo 加文字链接呈现，统一沿用 Editorial 配色，包括已访问、悬停和焦点状态；手机宽度也应检查并允许自然换行。
+- Honors 包含 ARMADA 的 IROS 2025 HRII Workshop Best Paper Award（2025.10）与 Learning H-Infinity Locomotion Control 的 CoRL 2024 LocoLearn Workshop Best Poster Award（2024.11），保持与论文记录的奖项名称一致。Service 简洁说明曾为 ICLR、ICRA、RA-L 审稿，不限定具体年份。
 - VaM 项目页的 arXiv、Code、Twitter 资源按钮使用左右双色徽章样式：左侧白底 logo，右侧以 logo 的品牌主色为背景；适配手机排列。
 - 项目卡片中的视频预览静音、自动、循环、行内播放：`autoplay muted loop playsinline`，保留手动暂停能力。ARMADA 使用 `previewvideo` 字段；此规则适用于所有同用途项目预览，不限于 ARMADA。
 - 上述是本仓库的长期偏好；用户后续明确改变要求时同步更新。

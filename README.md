@@ -4,6 +4,8 @@ Live site: https://virlus.github.io/
 
 Based on [My Scholar](https://github.com/mychiffonn/myscholar), using Astro, native CSS, Markdown, and BibTeX. The template's Apache 2.0 license is included in `LICENSE`; content and existing project assets retain their original ownership and licenses.
 
+The personal homepage adapts the [Editorial theme by Galaxy-Dawn](https://github.com/Galaxy-Dawn/academic-homepage-templates/tree/main/themes/editorial), with its MIT license in `licenses/academic-homepage-templates-MIT.txt`. Its layout is in `src/layouts/EditorialLayout.astro` and its styles are isolated under `body.editorial` in `src/styles/editorial.css`. Standalone project websites retain their own layouts and styles. Preview homepage redesigns locally and obtain user confirmation before pushing to the remote.
+
 ## Develop
 
 Use Node.js 24 and pnpm 10.20.0 (the version pinned in `package.json`).

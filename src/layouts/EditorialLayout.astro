@@ -1,0 +1,108 @@
+---
+import "@/styles/global.css"
+import "@/styles/editorial.css"
+import { SITE } from "@site-config"
+import Head from "@/components/layout/Head.astro"
+---
+
+<!doctype html>
+<html lang={SITE.locale.lang} dir={SITE.dir} data-theme="light">
+  <Head title={SITE.title} type="profile">
+    <script is:inline data-astro-rerun>
+      ;(() => {
+        let theme = "light"
+        try {
+          const stored = localStorage.getItem("theme")
+          if (stored === "dark" || stored === "light") theme = stored
+          else if (stored === "auto") {
+            theme = matchMedia("(prefers-color-scheme: dark)").matches
+              ? "dark"
+              : "light"
+          }
+        } catch {
+          /* The page also works without browser storage. */
+        }
+        document.documentElement.dataset.theme = theme
+      })()
+    </script>
+  </Head>
+  <body class="editorial">
+    <a class="editorial-skip" href="#main-content">Skip to main content</a>
+    <header class="editorial-header">
+      <nav
+        class="editorial-container editorial-navigation"
+        aria-label="Main navigation"
+      >
+        <div class="editorial-nav-links">
+          <a href="/#about">About</a>
+          <a href="/#research">Research</a>
+          <a href="/#news">News</a>
+          <a href="/#awards-and-service">Awards and Service</a>
+        </div>
+        <button
+          class="editorial-theme"
+          type="button"
+          aria-label="Switch to dark theme"
+          aria-pressed="false"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            width="16"
+            height="16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"
+            />
+          </svg>
+          <span data-editorial-theme-label>Dark</span>
+        </button>
+      </nav>
+    </header>
+    <main id="main-content"><slot /></main>
+    <footer class="editorial-footer editorial-container">
+      <p>© {new Date().getFullYear()} Wenye Yu</p>
+      <p>
+        Template from
+        <a
+          href="https://galaxy-dawn.github.io/academic-homepage-templates/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Academic Homepage Templates</a
+        ><span aria-hidden="true"> · </span><a href="#about">Back to top ↑</a>
+      </p>
+    </footer>
+    <script is:inline data-astro-rerun>
+      ;(() => {
+        const button = document.querySelector(".editorial-theme")
+        if (!button) return
+        function updateButton() {
+          const dark = document.documentElement.dataset.theme === "dark"
+          button.setAttribute("aria-pressed", String(dark))
+          button.setAttribute(
+            "aria-label",
+            `Switch to ${dark ? "light" : "dark"} theme`,
+          )
+          button.querySelector("[data-editorial-theme-label]").textContent =
+            dark ? "Light" : "Dark"
+        }
+        button.onclick = () => {
+          const theme =
+            document.documentElement.dataset.theme === "dark" ? "light" : "dark"
+          document.documentElement.dataset.theme = theme
+          try {
+            localStorage.setItem("theme", theme)
+          } catch {
+            /* Optional persistence. */
+          }
+          updateButton()
+        }
+        updateButton()
+      })()
+    </script>
+  </body>
+</html>

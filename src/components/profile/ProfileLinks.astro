@@ -12,9 +12,17 @@ interface Props {
   keys?: boolean | string[]
   /** Choose button, icon, or plain text links. */
   as?: "button" | "icon" | "text"
+  /** Add decorative logos alongside text labels. */
+  showIcons?: boolean
 }
 
-const { links, class: className = "", keys = true, as = "button" } = Astro.props
+const {
+  links,
+  class: className = "",
+  keys = true,
+  as = "button",
+  showIcons = false,
+} = Astro.props
 
 /* rel="me" asserts "this profile is also me", which only holds for identity
    profiles — not for documents like a CV or a feed. */
@@ -24,13 +32,16 @@ const processedLinks = getProcessedProfileLinks(links, keys)
 ---
 
 {processedLinks.length > 0 && (
-    <ul class:list={["profile-links", `profile-links-${as}`, className]}>
+    <ul class:list={["profile-links", `profile-links-${as}`, { "profile-links-with-icons": as === "text" && showIcons }, className]}>
       {processedLinks.map(({ key, href, isExternal, label, iconName }) => {
         const rel = NON_IDENTITY_KEYS.has(key) ? undefined : "me"
         return (
           <li>
             {as === "text" ? (
-              <Link href={href} external={key !== "email" && isExternal} rel={rel} underline>{label}</Link>
+              <Link href={href} external={key !== "email" && isExternal} rel={rel} underline>
+                {showIcons && <Icon name={iconName} size="1rem" />}
+                <span>{label}</span>
+              </Link>
             ) : <Button
               href={href}
               external={isExternal}
@@ -76,6 +87,16 @@ const processedLinks = getProcessedProfileLinks(links, keys)
   .profile-links-icon {
     flex-wrap: nowrap;
     gap: 0;
+  }
+
+  .profile-links-with-icons :global(a) {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .profile-links-with-icons :global(svg) {
+    flex-shrink: 0;
   }
 
   /* Secondary to the nav and home links, but hover/active/focus stay the
