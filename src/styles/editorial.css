@@ -3,7 +3,7 @@
 :root:has(body.editorial) {
   --background: light-dark(#fdfcfa, #1c1b19);
   --foreground: light-dark(#1a1a1a, #f0ede6);
-  --primary: light-dark(#8b0000, #e3a099);
+  --primary: var(--research-link);
   --accent: var(--primary);
   --muted-foreground: light-dark(#6b6b6b, #aaa69e);
   --border: light-dark(#d4d0c8, #47443f);
@@ -297,9 +297,6 @@ body.editorial .publication-links {
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-}
-body.editorial .publication-links a {
-  color: var(--primary);
 }
 
 .editorial-details-grid {

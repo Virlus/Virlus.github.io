@@ -1,4 +1,5 @@
 :root {
+  --research-link: light-dark(#8b0000, #e3a099);
   --background: light-dark(
     oklch(0.9578 0.0058 264.53),
     oklch(0.2007 0.0199 284.46)

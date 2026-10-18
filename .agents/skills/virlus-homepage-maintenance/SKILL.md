@@ -31,6 +31,7 @@ description: 维护 Wenye Yu 的 Virlus.github.io 学术主页与项目页面。
 - 所有研究列表按时间倒序排列（年份、月份；同月按 `main.bib` 顺序），不按是否 selected 或作者排名排序。VaM 目前是最新研究，保持首位；有更新工作时按实际时间调整。
 - Noe-0 Research Preview 保留 `Noematrix Team` 署名；RoboRSI 使用 arXiv 论文的完整作者列表与贡献标记。
 - 论文直接展示标题、作者与会议信息、简介和普通文字链接。简介不需要点击展开。
+- 所有论文卡片下方的 Project、Paper、Code、Blog 等资源链接统一使用酒红主题色；首页 Research 与 Projects 均适用，默认、已访问、悬停、键盘焦点及按下状态保持一致。共享色值由 `--research-link` 维护（浅色 `#8b0000`，深色沿用 Editorial 的 `#e3a099`），在共享 `PubCard.astro` 中覆盖全局文字链接状态，避免浏览历史导致部分链接变色；检查桌面和手机尺寸。
 - 首页 Research 左侧所有图片和视频直接按自身比例展示，不加外边框、底色或固定比例的大框。
 - 不增加论文标签、标签筛选、BibTeX 复制、邮箱复制等冗余操作。
 - 首页顶部导航使用 About、Research、News、Awards and Service；最后一项链接到本页 `/#awards-and-service` 的荣誉、服务与兴趣区域，不再链接旧模板的 Projects 列表。
