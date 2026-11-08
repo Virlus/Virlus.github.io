@@ -71,7 +71,7 @@ Removed the three headline metric cards at user request; experimental results no
 
 ## Warm-paper redesign (2026-10-09)
 - ENPIRE reference: https://research.nvidia.com/labs/gear/enpire/ . Independently implemented fixed left contents navigation, mobile drawer, warm paper palette (#fdf9f1), larger dark text and local Source Serif 4. Removed former horizontal navigation. Full supplementary video now titled “Full demonstration”.
-- Code: https://github.com/Virlus/vam . arXiv/Twitter remain unavailable placeholders until supplied.
+- Resources: [arXiv](https://arxiv.org/pdf/2610.22368), [Code](https://github.com/Virlus/vam), [Twitter](https://x.com/Jason_ywy/status/2114399694063534303?a=8GUjb7gFDHJSvLbiXos&s=20).
 - Logos downloaded from official institutional sites: SJTU https://global.sjtu.edu.cn/en/assets/images/logo_white_130.png ; SII https://www.sii.edu.cn/_upload/tpl/00/09/9/template9/images/logo.svg ; Noematrix https://www.noematrix.ai/en/image/common/logo.png . White SJTU lockup uses a red backing for contrast.
 - Source Serif 4 Latin WOFF2 is locally stored under assets/fonts, with its OFL license. Font source: reference site's Source Serif 4 font; license: google/fonts ofl/sourceserif4/OFL.txt. The site makes no third-party asset requests at runtime.
 - All three HTML tables replaced with original Matplotlib figures. Each reusable figure lives in figures/{online-success,value-sources,recovery-rate}/ with CSV, plotting script, STYLE.md and PNG/PDF exports. Matplotlib uses the shared paper environment exp_fig/.venvvisual.
